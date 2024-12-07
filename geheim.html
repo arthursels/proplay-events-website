@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geheime Pagina - ProPlay Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: url('pexels-photo-1181357.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        .content {
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            margin: 50px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .hidden-content {
+            display: none;
+        }
+        .show-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welkom op de Geheime Pagina</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="over-ons.html">Over Ons</a></li>
+                <li><a href="evenementen.html">Evenementen</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h2>Beveiligde Inhoud</h2>
+        <p>Deze pagina is alleen toegankelijk met het juiste wachtwoord. Voer het wachtwoord in om verder te gaan.</p>
+        <input type="password" id="password" placeholder="Voer het wachtwoord in">
+        <button onclick="checkPassword()">Toegang</button>
+        
+        <div id="secret-content" class="hidden-content">
+            <h3>Exclusieve Informatie</h3>
+            <p>Welkom! Je hebt toegang tot exclusieve informatie van ProPlay Events. Bedankt voor je interesse in ons bedrijf.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact: 04 99 5434 44 | &copy; 2024 ProPlay Events</p>
+        <p>Volg ons op:
+            <a href="https://www.facebook.com/profile.php?id=61567539554393" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt="Facebook" style="width: 30px; height: 30px; margin-left: 10px;">
+            </a>
+        </p>
+    </footer>
+    
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var secretContent = document.getElementById("secret-content");
+            
+            if (password === "ThomasMore2300") {
+                secretContent.classList.remove("hidden-content");
+                secretContent.classList.add("show-content");
+            } else {
+                alert("Fout wachtwoord, probeer het opnieuw.");
+            }
+        }
+    </script>
+</body>
+</html>
